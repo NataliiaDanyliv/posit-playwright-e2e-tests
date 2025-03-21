@@ -1,0 +1,18 @@
+{
+  "name": "posit-cloud-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test-chrome": "playwright test --project=chromium",
+    "test-chrome-headed": "playwright test --project=chromium --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.13.10",
+    "dotenv": "^16.4.7"
+  }
+}
