@@ -2,6 +2,10 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "CommonJS",
-    "strict": true
-  }
+    "strict": true,
+    "paths": {
+      "*": ["./types/*"]
+    }
+  },
+  "include": ["**/*.ts", "global.d.ts", "utils/customCommands.d.ts"]
 }

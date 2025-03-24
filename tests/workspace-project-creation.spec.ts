@@ -38,11 +38,13 @@ test.describe('Workspace project creation tests', () => {
     await page.click(newSpace.newRStudionProject);
 
     // Verify that the progress bar is visible
-    const progressBar = page.locator(RStudioProject.progressBar); // Adjust the selector for the progress bar if needed
+    const progressBar = page.locator(RStudioProject.progressBar);
     await expect(progressBar).toBeVisible();
     await progressBar.waitFor({ state: 'hidden', timeout: 50000 });
 
     //  Verifying that the RStudio IDE loads
+    test.setTimeout(60000);
+    await page.waitForResponse(response => response.url().includes('/rpc/list_files'));
     const iframeElement = page.locator(RStudioProject.rstudioContent);
     await expect(iframeElement).toBeVisible({ timeout: 60000 });
     // Get the content inside the iframe
